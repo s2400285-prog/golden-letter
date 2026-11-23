@@ -1,0 +1,18 @@
+@keyframes glimmer{0%,100%{opacity:calc(var(--opacity)*.55)}50%{opacity:var(--opacity)}}
+.sky i{animation:glimmer var(--period,6s) ease-in-out infinite alternate;animation-delay:var(--delay)}
+@keyframes flap-open{0%{transform:rotateX(0)}100%{transform:rotateX(162deg);filter:brightness(.8)}}
+@keyframes lift-note{to{transform:translateY(-53%) scale(.91,.86)}}
+@keyframes release-seal{to{opacity:0;transform:translate(-50%,10%) rotate(12deg)}}
+.opening .seal{animation:release-seal .7s ease forwards}.opening .env-flap{animation:flap-open 1.4s .45s ease-in-out forwards}.opening .env-sheet{animation:lift-note 1.4s 1.8s ease forwards}
+@keyframes rise{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes unfold{from{transform:perspective(800px) rotateX(-55deg);opacity:0}to{transform:perspective(800px) rotateX(0);opacity:1}}
+@keyframes ink{from{opacity:0;filter:blur(4px)}to{opacity:1;filter:blur(0)}}
+@keyframes slide{from{transform:translateX(-25px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bloom-in{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pulse{50%{transform:scale(1.09);filter:drop-shadow(0 0 8px #cda95288)}}
+@keyframes bars{0%,100%{transform:scaleY(.36)}50%{transform:scaleY(1)}}
+@keyframes kiss-float{from{opacity:0;transform:translateY(12px) rotate(-8deg)}30%{opacity:.85}to{opacity:0;transform:translateY(-75px) rotate(16deg)}}
+.golden-sentence{animation:ink .9s both;animation-delay:var(--delay)}#inside.visible .welcome .reading,#lastNote:not([hidden]){animation:rise .7s ease both}.chapter-card:nth-child(1):hover .chapter-motif{transform:scale(1.15)}.chapter-card:nth-child(2):hover .chapter-motif{transform:rotate(10deg)}.chapter-card:nth-child(3):hover .chapter-motif{transform:rotate(35deg)}.chapter-card:nth-child(4):hover .chapter-motif{transform:translateY(-5px)}.chapter-card:nth-child(5):hover .chapter-motif{filter:drop-shadow(0 0 4px #e6c98c)}
+#chapterDialog{--reveal:rise}#chapterDialog[open]{animation:var(--reveal) .38s ease both}#chapterDialog.closing[open]{animation:var(--reveal) .22s ease reverse both}.heart-gift,.final-heart{animation:pulse 2.2s infinite}.kiss-mark{position:absolute;color:#a77c34;font:italic 22px var(--serif);animation:kiss-float 1.8s both;pointer-events:none}.secret{animation:unfold .65s ease both;transform-origin:top}.playing .visualizer i{animation:bars .85s ease-in-out infinite}.playing .visualizer i:nth-child(2n){animation-delay:-.4s}.playing .visualizer i:nth-child(3){animation-delay:-.22s}.playing .visualizer i:nth-child(4){animation-duration:.63s}
+@media(pointer:fine) and (prefers-reduced-motion:no-preference){.cursor.active{display:block;pointer-events:none;position:fixed;z-index:60;width:9px;height:9px;top:0;left:0;border:1px solid #ccab69;border-radius:50%;opacity:.8;transition:width .2s,height .2s}.cursor.hover{width:19px;height:19px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}.art{transform:none}}
